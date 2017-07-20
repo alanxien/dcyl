@@ -1,18 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="dacaiyule.alanxie.com.dacaiyule.MainActivity">
+    android:background="@color/white" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <dacaiyule.alanxie.com.dacaiyule.viewpager.CustomViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/console_line_bottom"/>
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/console_line_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/bg_color"/>
+
+        <RadioGroup
+            android:id="@+id/main_radio"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:orientation="horizontal" >
+
+
+            <RadioButton
+                android:id="@+id/main_tab_home"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/main_tab_home_selector"
+                android:tag="radio_button0"
+                android:text="购彩大厅"
+                android:textSize="10sp"
+                android:textColor="@drawable/tab_textcolor_selector"
+                android:checked="true"/>
+            <RadioButton
+                android:id="@+id/main_tab_kaijiang"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/main_tab_kaijiang_selector"
+                android:tag="radio_button1"
+                android:text="开奖公告"
+                android:textSize="10sp"
+                android:textColor="@drawable/tab_textcolor_selector" />
+
+            <RadioButton
+                android:id="@+id/main_tab_wangzhan"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/main_tab_wangzhan_selector"
+                android:tag="radio_button2"
+                android:text="网站公告"
+                android:textSize="10sp"
+                android:textColor="@drawable/tab_textcolor_selector" />
+
+            <RadioButton
+                android:id="@+id/main_tab_me"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/main_tab_me_selector"
+                android:tag="radio_button3"
+                android:text="用户中心"
+                android:textSize="10sp"
+                android:textColor="@drawable/tab_textcolor_selector" />
+        </RadioGroup>
+    </LinearLayout>
+</RelativeLayout>
